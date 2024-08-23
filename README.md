@@ -1,4 +1,4 @@
-# 📊 Scrum Master's SQL queries
+# :mag_right: Scrum Master's SQL queries
 
 ## :eye: Overview
 
