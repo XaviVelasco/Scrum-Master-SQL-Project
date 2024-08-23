@@ -8,7 +8,6 @@ As a Scrum Master, I recognized the need for more data-driven insights to optimi
 
 - **Enhance sprint planning**: Provide myself with data-backed forecasts to accurately estimate team capacity and workload.
 - **Identify performance trends**: Analyze historical data to uncover patterns, identify bottlenecks, and pinpoint areas for improvement.
-- **Optimize resource allocation**: Make data-driven decisions regarding resource allocation and task prioritization.
 - **Improve team efficiency**: Implement targeted strategies based on data-driven insights to enhance team performance.
 
 ## 📖 Methodology:
@@ -23,7 +22,7 @@ You can check the SQL file [here](https://github.com/XaviVelasco/).
 
 - **Improved sprint planning**: More accurate forecasts and resource allocation based on historical data.
 - **Enhanced team performance**: Identification of areas for improvement and implementation of targeted strategies.
-- **Data-driven decision-making**: A framework for making informed decisions based on evidence rather than intuition.
+- **Data-driven decision-making**: A framework for making informed decisions based on evidence.
 
 ## 🛠️ Tools and Technologies:
 
