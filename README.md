@@ -1,19 +1,35 @@
-# :mag_right: Scrum Master's SQL queries
+# :mag_right: Data-Driven Sprint Forecasting with SQL
 
 ## :eye: Overview
 
-As a Scrum Master, I developed this dashboard to monitor and manage the performance of the development team. I have continuously adapted and added new features and visualizations as needed. Currently, I update the dashboard whenever I require new insights or need to analyze data for forecasting.
+As a Scrum Master, I recognized the need for more data-driven insights to optimize sprint planning and improve team efficiency. To achieve this, I developed a series of SQL queries to extract valuable information from historical sprint data.
 
-This Excel workbook offers a comprehensive overview of a Scrum team's performance, organized into three worksheets:
+## 🔑 Key Objectives
 
-- Sprint_details
-- Data 
-- Pivot Tables
-- Dashboard
+- **Enhance sprint planning**: Provide myself with data-backed forecasts to accurately estimate team capacity and workload.
+- **Identify performance trends**: Analyze historical data to uncover patterns, identify bottlenecks, and pinpoint areas for improvement.
+- **Optimize resource allocation**: Make data-driven decisions regarding resource allocation and task prioritization.
+- **Improve team efficiency**: Implement targeted strategies based on data-driven insights to enhance team performance.
 
-You can check the Excel file [here](https://github.com/XaviVelasco/Scrum-Master-Excel-Dashboard/blob/edf5446b645b270483108baeb54e9e1fd64d4e51/Excel%20-%20Scrum%20Master%20Dashboard.xlsx).
+## 📖 Methodology:
 
-***
+- **Data Collection**: Gathered historical sprint data, including metrics such as team velocity, story points completed, unplanned tasks, and compliance rates.
+- **Query Development**: Crafted SQL queries to extract relevant information from the data, focusing on key performance indicators and trends.
+- **Data Analysis**: Analyzed the extracted data to identify patterns, correlations, and potential areas for optimization.
+
+You can check the SQL file [here](https://github.com/XaviVelasco/).
+
+## 📈 Expected Outcomes:
+
+- **Improved sprint planning**: More accurate forecasts and resource allocation based on historical data.
+- **Enhanced team performance**: Identification of areas for improvement and implementation of targeted strategies.
+- **Data-driven decision-making**: A framework for making informed decisions based on evidence rather than intuition.
+
+## 🛠️ Tools and Technologies:
+
+SQL (e.g., PostgreSQL, MySQL, SQL Server)
+Data visualization tools (optional, e.g., Tableau, Power BI)
+Version control (e.g., Git)
 
 ## :abacus: Skills and formulas used
 
