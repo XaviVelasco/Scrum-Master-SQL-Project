@@ -47,9 +47,6 @@ This project demonstrates a range of data analysis skills that are crucial for u
 ### Sprint_details
 
 This Excel sheet is used to manually enter new data observed in the sprints, which will then be used for the rest of the tables and the creation of the team's control dashboard.
-
-<kbd>![SM Excel Dashboard - Sprint_details](https://github.com/XaviVelasco/Scrum-Master-Excel-Dashboard/blob/7b672422b64f23ce5f58c4dfe3f2107d1c6df52a/assets/img/SM%20Excel%20Dashboard%20-%20Data%20table.png)
-
 Below you can find the description of the data (columns) used in this sheet:
 
 | Column name | Column description |
@@ -67,6 +64,8 @@ Below you can find the description of the data (columns) used in this sheet:
 
 > [!IMPORTANT]
 > This data used is based on real scrum teams but has been deliberately modified.
+
 > [!NOTE]
 > The *referenced* data is obtained from the *Sprint_details* sheet.
+
 ***
