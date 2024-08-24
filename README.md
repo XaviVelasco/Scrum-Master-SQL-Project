@@ -21,22 +21,22 @@ To analyze the effectiveness of sprint planning, I compared data from the _plann
 ### PLANNED TABLE
 | Column name | Column description |
 |---|---|
-| Sprint | (Primary Key) Sprint Number | 
-| Hours |Hours that the team is available to develop in this sprint |
-| Planned Issues | Number of Issues or tasks that the team has planned to do in this sprint |
-| Planned SP | Total of the Story Points the team has commited to do in this sprint |
+| sprint_id | (Primary Key) Sprint Number | 
+| hours |Hours that the team is available to develop in this sprint |
+| planned_issues | Number of Issues or tasks that the team has planned to do in this sprint |
+| planned_sp | Total of the Story Points the team has commited to do in this sprint |
 
 
 ### RESULTS TABLE
 | Column name | Column description |
 |---|---|
-| Sprint | (Primary Key) Sprint Number | 
-| Planned Issues Done | Number of issues done that were planned |
-| Unplanned Issues Done | Number of issues done that were NOT planned |
-| Bugs (Issues) | Total Amount of bug issues done during this sprint (planned or unplanned) |
-| Planned SP Done	| Number of Story Points Done that were planned |
-| Unplanned SP Done | Number of Story Points Done that were NOT planned |
-| Bugs (SP) | SP of bugs done during this sprint (planned or unplanned) |
+| sprint_id | (Primary Key) Sprint Number | 
+| planned_issues_done | Number of issues done that were planned |
+| unplanned_issues_done | Number of issues done that were NOT planned |
+| bugs_issues | Total Amount of bug issues done during this sprint (planned or unplanned) |
+| planned_sp_done	| Number of Story Points Done that were planned |
+| unplanned_sp_done | Number of Story Points Done that were NOT planned |
+| bugs_sp | SP of bugs done during this sprint (planned or unplanned) |
 
 You can check the SQL file [here](https://github.com/XaviVelasco/).
 
