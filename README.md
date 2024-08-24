@@ -1,5 +1,13 @@
 # :mag_right: Data-Driven Sprint Forecasting with SQL
 
+## 📚 Table of contents
+
+- [Overview](#overview)
+- [Key Objectives](#key-objectives)
+- [Methodology](#methodology)
+
+***
+
 ## :eye: Overview
 
 As a Scrum Master, I recognized the need for more data-driven insights to optimize sprint planning and improve team efficiency. To achieve this, I developed a series of SQL queries to extract valuable information from historical sprint data.
@@ -26,7 +34,7 @@ To achieve these objectives, I formulated data-driven questions to guide my anal
 
 To analyze the effectiveness of sprint planning, I compared data from the _planned_ and _results_ tables using SQL queries in Google Cloud's _Big Query_. Each table column is described in detail below:
 
-### PLANNED TABLE
+**PLANNED TABLE**
 | Column name | Column description |
 |---|---|
 | sprint_id (🔑) | Sprint Number | 
@@ -35,7 +43,7 @@ To analyze the effectiveness of sprint planning, I compared data from the _plann
 | planned_sp | Total of the Story Points the team has commited to do in this sprint |
 
 
-### RESULTS TABLE
+**RESULTS TABLE**
 | Column name | Column description |
 |---|---|
 | sprint_id (🔑) | Sprint Number | 
