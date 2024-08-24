@@ -4,7 +4,7 @@
 
 As a Scrum Master, I recognized the need for more data-driven insights to optimize sprint planning and improve team efficiency. To achieve this, I developed a series of SQL queries to extract valuable information from historical sprint data.
 
-## 🔑 Key Objectives
+## 🎯 Key Objectives
 
 The primary objectives of this analysis were to:
 
@@ -29,7 +29,7 @@ To analyze the effectiveness of sprint planning, I compared data from the _plann
 ### PLANNED TABLE
 | Column name | Column description |
 |---|---|
-| sprint_id | (Primary Key) Sprint Number | 
+| sprint_id (🔑) | Sprint Number | 
 | hours |Hours that the team is available to develop in this sprint |
 | planned_issues | Number of Issues or tasks that the team has planned to do in this sprint |
 | planned_sp | Total of the Story Points the team has commited to do in this sprint |
@@ -38,7 +38,7 @@ To analyze the effectiveness of sprint planning, I compared data from the _plann
 ### RESULTS TABLE
 | Column name | Column description |
 |---|---|
-| sprint_id | (Primary Key) Sprint Number | 
+| sprint_id (🔑) | Sprint Number | 
 | planned_issues_done | Number of issues done that were planned |
 | unplanned_issues_done | Number of issues done that were NOT planned |
 | bugs_issues | Total Amount of bug issues done during this sprint (planned or unplanned) |
