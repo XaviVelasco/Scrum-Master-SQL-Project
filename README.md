@@ -6,9 +6,17 @@ As a Scrum Master, I recognized the need for more data-driven insights to optimi
 
 ## 🔑 Key Objectives
 
+The primary objectives of this analysis were to:
+
 - **Enhance sprint planning**: Provide myself with data-backed forecasts to accurately estimate team capacity and workload.
 - **Identify performance trends**: Analyze historical data to uncover patterns, identify bottlenecks, and pinpoint areas for improvement.
 - **Improve team efficiency**: Implement targeted strategies based on data-driven insights to enhance team performance.
+
+To achieve these objectives, I formulated data-driven questions to guide my analysis:
+
+1. Avg team's velocity
+2. What is the trend in unplanned work across sprints?
+3. What is the average completion rate of planned tasks across all sprints?
 
 ## 📖 Methodology:
 
@@ -48,10 +56,4 @@ You can check the SQL file [here](https://github.com/XaviVelasco/).
 - **Improved sprint planning**: More accurate forecasts and resource allocation based on historical data.
 - **Enhanced team performance**: Identification of areas for improvement and implementation of targeted strategies.
 - **Data-driven decision-making**: A framework for making informed decisions based on evidence.
-
-## 🛠️ Tools and Technologies:
-
-SQL (e.g., PostgreSQL, MySQL, SQL Server)
-
-## :abacus: Skills and formulas used
 
