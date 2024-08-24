@@ -16,7 +16,7 @@ As a Scrum Master, I recognized the need for more data-driven insights to optimi
 - **Query Development**: Crafted SQL queries to extract relevant information from the data, focusing on key performance indicators and trends.
 - **Data Analysis**: Analyzed the extracted data to identify patterns, correlations, and potential areas for optimization.
 
-To analyze the effectiveness of sprint planning, I compared data from the _planned_ and _results_ tables using SQL queries in Google's _Big Query_. Each table column is described in detail below:
+To analyze the effectiveness of sprint planning, I compared data from the _planned_ and _results_ tables using SQL queries in Google Cloud's _Big Query_. Each table column is described in detail below:
 
 ### PLANNED TABLE
 | Column name | Column description |
