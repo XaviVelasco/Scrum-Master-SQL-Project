@@ -1,5 +1,13 @@
 # 📌 Data-Driven Sprint Forecasting with SQL - Solution
 
+## 📚 Table of contents
+
+- [Table creation](table-creation)
+
+
+***
+
+## Table creation
 
 1. **Velocity**: _What is the team's average velocity (story points completed)?_
 2. **Peak Performance**: _When did the team achieve its best overall performance in terms of story points completed?_ 
