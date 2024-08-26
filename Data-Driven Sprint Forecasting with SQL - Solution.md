@@ -4,6 +4,14 @@
 
 First of all, I am going to create the database with all tables and data. I will be using Google's Cloud BigQuery to do this.
 
+````sql
+CREATE TABLE rooms (
+  room_id INT IDENTITY(1,1) NOT NULL, -- IDENTITY(1,1) refers to an identity key which auto-increments by 1
+  room_no CHAR(3) NOT NULL,
+  bed_type VARCHAR(15) NOT NULL,
+  rate SMALLMONEY NOT NULL);
+````
+
 ## ❓ Questions and Answers
 
 ### 1. **Velocity**: _What is the team's average velocity (story points completed)?_
