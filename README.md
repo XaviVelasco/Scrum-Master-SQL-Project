@@ -20,19 +20,18 @@ The primary objectives of this analysis were to:
 - **Identify performance trends**: Analyze historical data to uncover patterns, identify bottlenecks, and pinpoint areas for improvement.
 - **Improve team efficiency**: Implement targeted strategies based on data-driven insights to enhance team performance.
 
-To achieve these objectives, I formulated data-driven questions to guide my analysis:
+To achieve these objectives, I formulated data-driven questions to guide my analysis and compared the results for all sprints with the average of the last five sprints:
 
-1. What is the team's average velocity (story points completed) across the sprints? And only during the last 5 sprints?
-2. How closely does the planned work align with the actual work completed in each sprint? How accurate are the team's story point estimates?
-3. What is the ratio of planned story points completed to unplanned story points completed?
-4. What is the trend in unplanned work across sprints?
-5. What is the average completion rate of planned tasks across all sprints? How efficiently is the team utilizing its available hours?
-6. What is the percentage of work done that was unplanned across all sprints?
-7. What is the average number of unplanned issues introduced per sprint?
-8. How does the presence of bugs impact the completion of unplanned work?
-9. What percentage of the total sprint workload is taken up by bugs?
-10. How often does the team exceed their planned story points?
-11. Regarding last 5 sprints, what would be the estimated team compliance, % of planned sp and % of unplanned work?
+1. _What is the team's average velocity (story points completed)?_
+2. _What has been the best team's performance in SP?_ 
+3. _How efficiently is the team utilizing its available hours?_
+4. _What is the ratio of planned story points completed to unplanned story points completed?_ 
+5. _What is the average completion rate of planned tasks?_
+6. _What is the percentage of work done that was unplanned?_
+7. _What is the average number of unplanned issues introduced per sprint?_ 
+8. _Is the team improving stories refinement?_
+9. _What percentage of the total sprint workload is taken up by bugs?_
+10. _What is the % of team compliance?_ 
 
 ## 📖 Methodology:
 
