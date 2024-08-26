@@ -22,16 +22,17 @@ The primary objectives of this analysis were to:
 
 To achieve these objectives, I formulated data-driven questions to guide my analysis and compared the results for all sprints with the average of the last five sprints:
 
-1. _What is the team's average velocity (story points completed)?_
-2. _What has been the best team's performance in SP?_ 
-3. _How efficiently is the team utilizing its available hours?_
-4. _What is the ratio of planned story points completed to unplanned story points completed?_ 
-5. _What is the average completion rate of planned tasks?_
-6. _What is the percentage of work done that was unplanned?_
-7. _What is the average number of unplanned issues introduced per sprint?_ 
-8. _Is the team improving stories refinement?_
-9. _What percentage of the total sprint workload is taken up by bugs?_
-10. _What is the % of team compliance?_ 
+1. **Velocity**: _What is the team's average velocity (story points completed)?_
+2. **Peak Performance**: _When did the team achieve its best overall performance in terms of story points completed?_ 
+3. **Efficiency**: _How efficiently is the team utilizing its available hours?_
+4. **Planned vs. Unplanned Work**: _What is the ratio of planned story points completed to unplanned story points completed?_ 
+5. **Task Completion**: _What is the average completion rate of planned tasks?_
+6. **Unplanned Work**: _What percentage of the total sprint workload is taken up by unplanned work?_
+7. **Unplanned Issues**: _What is the average number of unplanned issues introduced per sprint?_ 
+8. **Story Refinement**: _Is the team improving stories refinement?_
+9. **Defects**: _What percentage of the total sprint workload is taken up by bugs?_
+10. **Commitment vs. Delivery**: _What is the percentage of story points committed that were successfully completed during the sprint?_ 
+
 
 ## 📖 Methodology:
 
