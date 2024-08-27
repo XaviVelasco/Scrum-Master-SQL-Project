@@ -20,7 +20,7 @@ To ask this question, we are going to
 ### 10. **Commitment vs. Delivery**: _What is the percentage of story points committed that were successfully completed during the sprint?_ 
 ***
 
-## Table creation
+## 📝 Table creation
 
 I'll start by creating and populating the tables in the _scrum_master_ database using **MySQL Workbench**.
 
