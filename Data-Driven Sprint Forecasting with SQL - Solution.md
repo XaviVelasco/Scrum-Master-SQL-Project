@@ -149,7 +149,18 @@ In this case, **the average story points done are 64**.
 <details>
   <summary>2. <b>Peak Performance:</b> When did the team achieve its best overall performance in terms of story points completed?</summary>
 
-To ask this question, we are going to 
+````sql
+SELECT 
+    sprint_id AS Sprint,
+    (planned_sp_done + unplanned_sp_done) AS Total_SP
+FROM
+    results
+ORDER BY Total_SP DESC
+LIMIT 1;
+````
+![image](https://github.com/user-attachments/assets/425fe96b-e07c-48de-a49e-e214994a2616)
+
+The team achieved its best overall performance in **sprint 61 with 137 story points**.
 
 ***
 </details>
