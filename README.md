@@ -43,24 +43,24 @@ To achieve these objectives, I formulated data-driven questions to guide my anal
 To analyze the effectiveness of sprint planning, I compared data from the _planned_ and _results_ tables using SQL queries in Google Cloud's _Big Query_. Each table column is described in detail below:
 
 **_PLANNED_ TABLE**
-| Column name | Column description |
-|---|---|
-| sprint_id (🔑) | Sprint Number | 
-| team_hours |Hours that the team is available to develop in this sprint |
-| planned_issues | Number of Issues or tasks that the team has planned to do in this sprint |
-| planned_sp | Total of the Story Points the team has commited to do in this sprint |
+| Column name | Data type | Column description |
+|---|:---:|---|
+| sprint_id (🔑) | INT | Sprint Number | 
+| team_hours | INT | Hours that the team is available to develop in this sprint |
+| planned_issues | INT | Number of Issues or tasks that the team has planned to do in this sprint |
+| planned_sp | INT | Total of the Story Points the team has commited to do in this sprint |
 
 
 **_RESULTS_ TABLE**
-| Column name | Column description |
-|---|---|
-| sprint_id (🔑) | Sprint Number | 
-| planned_issues_done | Number of issues done that were planned |
-| unplanned_issues_done | Number of issues done that were NOT planned |
-| bugs_issues | Total Amount of bug issues done during this sprint (planned or unplanned) |
-| planned_sp_done	| Number of Story Points Done that were planned |
-| unplanned_sp_done | Number of Story Points Done that were NOT planned |
-| bugs_sp | SP of bugs done during this sprint (planned or unplanned) |
+| Column name | Data type | Column description |
+|---|:---:|---|
+| sprint_id (🔑) | INT | Sprint Number | 
+| planned_issues_done | INT | Number of issues done that were planned |
+| unplanned_issues_done | INT | Number of issues done that were NOT planned |
+| bugs_issues | INT | Total Amount of bug issues done during this sprint (planned or unplanned) |
+| planned_sp_done	| INT | Number of Story Points Done that were planned |
+| unplanned_sp_done | INT | Number of Story Points Done that were NOT planned |
+| bugs_sp | INT | SP of bugs done during this sprint (planned or unplanned) |
 
 You can check the SQL file [here](https://github.com/XaviVelasco/).
 
