@@ -149,6 +149,7 @@ In this case, **the average story points done are 64**.
 <details>
   <summary>2. <b>Peak Performance:</b> When did the team achieve its best overall performance in terms of story points completed?</summary>
 <br>
+  
 - Taking in account all the springs:
   
 ````sql
