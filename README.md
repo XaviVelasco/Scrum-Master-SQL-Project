@@ -40,7 +40,7 @@ To achieve these objectives, I formulated data-driven questions to guide my anal
 - **Query Development**: Crafted SQL queries to extract relevant information from the data, focusing on key performance indicators and trends.
 - **Data Analysis**: Analyzed the extracted data to identify patterns, correlations, and potential areas for optimization.
 
-To analyze the effectiveness of sprint planning, I compared data from the _planned_ and _results_ tables using SQL queries in Google Cloud's _Big Query_. Each table column is described in detail below:
+To analyze the effectiveness of sprint planning, I have created and compared data from the _planned_ and _results_ tables using SQL queries in _MySQL Workbench_ from a database named _scrum_master_. Each table column is described in detail below:
 
 **_planned_ TABLE**
 | Column name | Data type | Column description |
