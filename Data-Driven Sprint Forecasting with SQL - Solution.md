@@ -2,10 +2,10 @@
 
 ## 📝 Table creation
 
-First of all, I am going to create the database with all tables and data. I will be using MySQL to do this.
+I'll start by creating and populating the tables in the _scrum_master_ database using **MySQL Workbench**.
 
 ````sql
-CREATE TABLE planned (
+CREATE TABLE scrum_master.planned (
   sprint_id INT NOT NULL,
   team_hours INT NOT NULL,
   planned_issues INT NOT NULL,
@@ -13,8 +13,14 @@ CREATE TABLE planned (
   PRIMARY KEY (sprint_id)
 );
 
-INSERT INTO planned (sprint_id, team_hours, planned_issues, planned_sp)
-VALUES (41, 535, 16, 104),
+INSERT INTO scrum_master.planned (
+  sprint_id,
+  team_hours,
+  planned_issues,
+  planned_sp
+  )
+VALUES
+  (41, 535, 16, 104),
   (42, 513, 16, 108),
   (43, 374, 12, 80),
   (44, 411, 14, 89),
@@ -42,7 +48,7 @@ VALUES (41, 535, 16, 104),
   (66, 364, 11, 61);
 ````
 ````sql
-CREATE TABLE results (
+ CREATE TABLE scrum_master.results (
   sprint_id INT NOT NULL,
   planned_issues_done INT NOT NULL,
   unplanned_issues_done INT NOT NULL,
@@ -52,6 +58,43 @@ CREATE TABLE results (
   bugs_sp INT NOT NULL,
   PRIMARY KEY (sprint_id)
 );
+
+INSERT INTO scrum_master.results (
+  sprint_id,
+  planned_issues_done,
+  unplanned_issues_done,
+  bugs_issues,
+  planned_sp_done,
+  unplanned_sp_done,
+  bugs_sp
+  )
+VALUES
+  (41, 10, 7, 0, 63, 28, 0),
+  (42, 11, 6, 1, 64, 25, 3),
+  (43, 11, 6, 2, 45, 22, 5),
+  (44, 11, 8, 1, 48, 27, 2),
+  (45, 12, 5, 3, 59, 15, 6),
+  (46, 8, 4, 1, 65, 19, 8),
+  (47, 12, 4, 2, 71, 14, 3),
+  (48, 13, 6, 4, 58, 9, 12),
+  (49, 8, 8, 5, 75, 17, 12),
+  (50, 16, 4, 5, 81, 29, 15),
+  (51, 10, 5, 3, 48, 25, 14),
+  (52, 16, 2, 2, 80, 6, 6),
+  (53, 17, 3, 4, 76, 13, 8),
+  (54, 14, 4, 6, 59, 12, 8),
+  (55, 18, 3, 4, 102, 17, 12),
+  (56, 20, 4, 1, 96, 23, 5),
+  (57, 16, 2, 4, 78, 23, 12),
+  (58, 9, 2, 1, 64, 28, 3),
+  (59, 15, 7, 5, 95, 23, 10),
+  (60, 12, 4, 2, 78, 21, 8),
+  (61, 21, 5, 3, 115, 22, 7),
+  (62, 10, 3, 2, 54, 9, 5),
+  (63, 6, 4, 1, 58, 14, 3),
+  (64, 12, 3, 1, 52, 9, 6),
+  (65, 8, 2, 3, 57, 6, 5),
+  (66, 5, 2, 2, 57, 4, 6);
 ````
 
 ## ❓ Questions and Answers
