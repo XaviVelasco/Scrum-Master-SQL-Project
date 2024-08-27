@@ -1,29 +1,12 @@
 # 📌 Data-Driven Sprint Forecasting with SQL - Solution
 
-## 📚 Table of contents
-
-- [Table creation](#-table-creation)
-- [Questions and Answers](#questions-and-answers)
-  1. [**Velocity**: What is the team's average velocity (story points completed)?](#methodology)
-  2. 
-
-
-To ask this question, we are going to 
-### 2. **Peak Performance**: _When did the team achieve its best overall performance in terms of story points completed?_ 
-### 3. **Efficiency**: _How efficiently is the team utilizing its available hours?_
-### 4. **Planned vs. Unplanned Work**: _What is the ratio of planned story points completed to unplanned story points completed?_ 
-### 5. **Task Completion**: _What is the average completion rate of planned tasks?_
-### 6. **Unplanned Work**: _What percentage of the total sprint workload is taken up by unplanned work?_
-### 7. **Unplanned Issues**: _What is the average number of unplanned issues introduced per sprint?_ 
-### 8. **Story Refinement**: _Is the team improving stories refinement?_
-### 9. **Defects**: _What percentage of the total sprint workload is taken up by bugs?_
-### 10. **Commitment vs. Delivery**: _What is the percentage of story points committed that were successfully completed during the sprint?_ 
-***
-
 ## 📝 Table creation
 
 I'll start by creating and populating the tables in the _scrum_master_ database using **MySQL Workbench**.
 
+<details>
+  <summary>TABLE 1: <i>planned</i></summary>
+  
 ````sql
 CREATE TABLE scrum_master.planned (
   sprint_id INT NOT NULL,
@@ -67,6 +50,12 @@ VALUES
   (65, 431, 17, 67),
   (66, 364, 11, 61);
 ````
+
+</details>
+
+<details>
+  <summary>TABLE 2: <i>results</i></summary>
+  
 ````sql
  CREATE TABLE scrum_master.results (
   sprint_id INT NOT NULL,
@@ -116,18 +105,67 @@ VALUES
   (65, 8, 2, 3, 57, 6, 5),
   (66, 5, 2, 2, 57, 4, 6);
 ````
+</details>
 
 ## ❓ Questions and Answers
 
-### 1. **Velocity**: _What is the team's average velocity (story points completed)?_
-
+<details>
+  <summary>1. <b>Velocity</b>: What is the team's average velocity (story points completed)?</summary>
+<br>
 To ask this question, we are going to 
-### 2. **Peak Performance**: _When did the team achieve its best overall performance in terms of story points completed?_ 
-### 3. **Efficiency**: _How efficiently is the team utilizing its available hours?_
-### 4. **Planned vs. Unplanned Work**: _What is the ratio of planned story points completed to unplanned story points completed?_ 
-### 5. **Task Completion**: _What is the average completion rate of planned tasks?_
-### 6. **Unplanned Work**: _What percentage of the total sprint workload is taken up by unplanned work?_
-### 7. **Unplanned Issues**: _What is the average number of unplanned issues introduced per sprint?_ 
-### 8. **Story Refinement**: _Is the team improving stories refinement?_
-### 9. **Defects**: _What percentage of the total sprint workload is taken up by bugs?_
-### 10. **Commitment vs. Delivery**: _What is the percentage of story points committed that were successfully completed during the sprint?_ 
+
+</details>
+<details>
+  <summary>2. <b>Peak Performance:</b> When did the team achieve its best overall performance in terms of story points completed?</summary>
+<br>
+To ask this question, we are going to 
+
+</details>
+<details>
+  <summary>3. <b>Efficiency:</b>How efficiently is the team utilizing its available hours?</summary>
+<br>
+To ask this question, we are going to 
+
+</details>
+<details>
+  <summary>4. <b>Planned vs. Unplanned Work:</b> What is the ratio of planned story points completed to unplanned story points completed?</summary>
+<br>
+To ask this question, we are going to 
+
+</details>
+<details>
+  <summary>5. <b>Task Completion:</b> What is the average completion rate of planned tasks?</summary>
+<br>
+To ask this question, we are going to 
+<br>
+</details>
+<details>
+  <summary>6. <b>Unplanned Work:</b> What percentage of the total sprint workload is taken up by unplanned work?</summary>
+<br>
+To ask this question, we are going to 
+<br>
+</details>
+<details>
+  <summary>7. <b>Unplanned Issues:</b> What is the average number of unplanned issues introduced per sprint?</summary>
+<br>
+To ask this question, we are going to 
+<br>
+</details>
+<details>
+  <summary>8. <b>Story Refinement:</b> Is the team improving stories refinement?</summary>
+<br>
+To ask this question, we are going to 
+<br>
+</details>
+<details>
+  <summary>9. <b>Defects:</b> What percentage of the total sprint workload is taken up by bugs?</summary>
+<br>
+To ask this question, we are going to 
+<br>
+</details>
+<details>
+  <summary>10. <b>Commitment vs. Delivery:</b> What is the percentage of story points committed that were successfully completed during the sprint?</summary>
+<br>
+To ask this question, we are going to 
+<br>
+</details>
