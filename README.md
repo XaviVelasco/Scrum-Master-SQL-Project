@@ -46,7 +46,7 @@ To analyze the effectiveness of sprint planning, I compared data from the _plann
 | Column name | Column description |
 |---|---|
 | sprint_id (🔑) | Sprint Number | 
-| hours |Hours that the team is available to develop in this sprint |
+| team_hours |Hours that the team is available to develop in this sprint |
 | planned_issues | Number of Issues or tasks that the team has planned to do in this sprint |
 | planned_sp | Total of the Story Points the team has commited to do in this sprint |
 
