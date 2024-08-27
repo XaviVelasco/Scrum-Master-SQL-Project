@@ -12,9 +12,7 @@ CREATE TABLE planned (
   planned_sp INT NOT NULL,
   PRIMARY KEY (sprint_id)
 );
-````
-Now we insert the data:
-````sql
+
 INSERT INTO planned (sprint_id, team_hours, planned_issues, planned_sp)
 VALUES (41, 535, 16, 104),
   (42, 513, 16, 108),
