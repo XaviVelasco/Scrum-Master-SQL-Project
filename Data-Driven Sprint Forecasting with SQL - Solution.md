@@ -2,7 +2,7 @@
 
 ## 📚 Table of contents
 
-- [Table creation](#table-creation)
+- [Table creation](#-table-creation)
 - [Questions and Answers](#questions-and-answers)
   1. [**Velocity**: What is the team's average velocity (story points completed)?](#methodology)
   2. 
