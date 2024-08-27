@@ -12,8 +12,9 @@ CREATE TABLE planned (
   planned_sp INT NOT NULL,
   PRIMARY KEY (sprint_id)
 );
-
-CREATE TABLE planned (
+````
+````sql
+CREATE TABLE results (
   sprint_id INT NOT NULL,
   planned_issues_done INT NOT NULL,
   unplanned_issues_done INT NOT NULL,
