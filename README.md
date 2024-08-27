@@ -40,7 +40,11 @@ To achieve these objectives, I formulated data-driven questions to guide my anal
 - **Query Development**: Crafted SQL queries to extract relevant information from the data, focusing on key performance indicators and trends.
 - **Data Analysis**: Analyzed the extracted data to identify patterns, correlations, and potential areas for optimization.
 
-To analyze the effectiveness of sprint planning, I have created and compared data from the _planned_ and _results_ tables using SQL queries in _MySQL Workbench_ from a database named _scrum_master_. Each table column is described in detail below:
+### Tables used
+
+To provide a more realistic and challenging scenario analyzing the effectiveness of sprint planning, I've chosen to use two tables (_planned_ and _results_) instead of a single one. This allows me to practice complex SQL queries that involve combining data from multiple sources.
+
+Each table column is described in detail below:
 
 **_planned_ TABLE**
 | Column name | Data type | Column description |
