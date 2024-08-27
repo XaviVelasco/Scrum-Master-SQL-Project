@@ -2,14 +2,27 @@
 
 ## 📝 Table creation
 
-First of all, I am going to create the database with all tables and data. I will be using Google's Cloud BigQuery to do this.
+First of all, I am going to create the database with all tables and data. I will be using MySQL to do this.
 
 ````sql
-CREATE TABLE rooms (
-  room_id INT IDENTITY(1,1) NOT NULL, -- IDENTITY(1,1) refers to an identity key which auto-increments by 1
-  room_no CHAR(3) NOT NULL,
-  bed_type VARCHAR(15) NOT NULL,
-  rate SMALLMONEY NOT NULL);
+CREATE TABLE planned (
+  sprint_id INT NOT NULL,
+  team_hours INT NOT NULL,
+  planned_issues INT NOT NULL,
+  planned_sp INT NOT NULL,
+  PRIMARY KEY (sprint_id)
+);
+
+CREATE TABLE planned (
+  sprint_id INT NOT NULL,
+  planned_issues_done INT NOT NULL,
+  unplanned_issues_done INT NOT NULL,
+  bugs_issues INT NOT NULL,
+  planned_sp_done INT NOT NULL,
+  unplanned_sp_done INT NOT NULL,
+  bugs_sp INT NOT NULL,
+  PRIMARY KEY (sprint_id)
+);
 ````
 
 ## ❓ Questions and Answers
