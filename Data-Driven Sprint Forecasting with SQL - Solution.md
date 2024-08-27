@@ -148,9 +148,10 @@ In this case, **the average story points done are 64**.
 </details>
 <details>
   <summary>2. <b>Peak Performance:</b> When did the team achieve its best overall performance in terms of story points completed?</summary>
-<br>
+
 To ask this question, we are going to 
 
+***
 </details>
 <details>
   <summary>3. <b>Efficiency:</b>How efficiently is the team utilizing its available hours?</summary>
