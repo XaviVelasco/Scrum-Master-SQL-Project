@@ -112,18 +112,38 @@ VALUES
 <details>
   <summary>1. <b>Velocity</b>: What is the team's average velocity (story points completed)?</summary>
 <br>
-  
+
+- Taking in account all the springs:
+
 ````sql
 SELECT 
     COUNT(sprint_id) AS "Total Sprints", ROUND(AVG(planned_sp_done + unplanned_sp_done)) AS "Average SP Done"
 FROM
     results;
 ````
-**Answer:**
 
 ![image](https://github.com/user-attachments/assets/303c9d2b-484c-4c35-9c74-3e48362b8a1d)
 
-There are 26 sprints in total, and the overall average story points done are 87. I have sum up 
+There are 26 sprints in total, and **the overall average story points done are 87**. 
+
+- Considering only the last 5 sprints:
+
+````sql
+SELECT 
+    ROUND(AVG(planned_sp_done + unplanned_sp_done)) AS 'Average SP Done'
+FROM
+    results
+WHERE
+    sprint_id >= (SELECT 
+            MAX(sprint_id) - 4
+        FROM
+            results);
+````
+![image](https://github.com/user-attachments/assets/a51946b2-4048-42e8-ac98-9e662940f6da)
+
+In this case, **the average story points done are 64**.
+
+***
 
 </details>
 <details>
