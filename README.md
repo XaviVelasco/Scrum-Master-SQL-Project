@@ -42,7 +42,7 @@ To achieve these objectives, I formulated data-driven questions to guide my anal
 
 To analyze the effectiveness of sprint planning, I compared data from the _planned_ and _results_ tables using SQL queries in Google Cloud's _Big Query_. Each table column is described in detail below:
 
-**PLANNED TABLE**
+**_PLANNED_ TABLE**
 | Column name | Column description |
 |---|---|
 | sprint_id (🔑) | Sprint Number | 
@@ -51,7 +51,7 @@ To analyze the effectiveness of sprint planning, I compared data from the _plann
 | planned_sp | Total of the Story Points the team has commited to do in this sprint |
 
 
-**RESULTS TABLE**
+**_RESULTS_ TABLE**
 | Column name | Column description |
 |---|---|
 | sprint_id (🔑) | Sprint Number | 
