@@ -219,30 +219,49 @@ VALUES
       
       _Avg efficiency_: On average, the team does 0.199 story points per hour.
 
-- I will calculate the efficiency variation across **all sprints** using a subquery to determine the **standard deviation**.
-  
-  ````sql
-  SELECT results.sprint_id AS Sprint,
-    ROUND(SUM(planned_sp_done + unplanned_sp_done) / SUM(team_hours),3) AS Efficiency,
-    ROUND((SUM(planned_sp_done + unplanned_sp_done) / SUM(team_hours)) - (
-      SELECT AVG(Efficiency)
-      FROM (
-        SELECT (SUM(planned_sp_done) / SUM(team_hours)) AS Efficiency
-        FROM results
-        JOIN planned ON results.sprint_id = planned.sprint_id
-        GROUP BY results.sprint_id
-      ) AS Sprint_Avg_Subquery),2) AS Std_Deviation
-  FROM results
-  JOIN planned ON results.sprint_id = planned.sprint_id
-  GROUP BY results.sprint_id
-  ORDER BY results.sprint_id ASC;
-  ````
-  ![image](https://github.com/user-attachments/assets/8d6304b2-44bd-4842-b9ed-585ee4917130)
+- I will calculate the efficiency variation using a subquery to determine the **standard deviation**.
 
-- Now I will calculate the efficiency variation across the **last five sprints**.
-  
-  ````sql
-  ```` 
+   - Across **all sprints** 
+      
+      ````sql
+      SELECT results.sprint_id AS Sprint,
+        ROUND(SUM(planned_sp_done + unplanned_sp_done) / SUM(team_hours),3) AS Efficiency,
+        ROUND((SUM(planned_sp_done + unplanned_sp_done) / SUM(team_hours)) - (
+          SELECT AVG(Efficiency)
+          FROM (
+            SELECT (SUM(planned_sp_done) / SUM(team_hours)) AS Efficiency
+            FROM results
+            JOIN planned ON results.sprint_id = planned.sprint_id
+            GROUP BY results.sprint_id
+          ) AS Sprint_Avg_Subquery),2) AS Std_Deviation
+      FROM results
+      JOIN planned ON results.sprint_id = planned.sprint_id
+      GROUP BY results.sprint_id
+      ORDER BY results.sprint_id ASC;
+      ````
+      ![image](https://github.com/user-attachments/assets/8d6304b2-44bd-4842-b9ed-585ee4917130)
+
+   - Across **last five sprints** 
+      
+      ````sql
+      SELECT results.sprint_id AS Sprint,
+        ROUND(SUM(planned_sp_done + unplanned_sp_done) / SUM(team_hours),3) AS Efficiency,
+        ROUND((SUM(planned_sp_done + unplanned_sp_done) / SUM(team_hours)) - (
+          SELECT AVG(Efficiency)
+          FROM (
+            SELECT (SUM(planned_sp_done) / SUM(team_hours)) AS Efficiency
+            FROM results
+            JOIN planned ON results.sprint_id = planned.sprint_id
+            GROUP BY results.sprint_id
+          ) AS Sprint_Avg_Subquery),2) AS Std_Deviation
+      FROM results
+      JOIN planned ON results.sprint_id = planned.sprint_id
+      GROUP BY results.sprint_id
+      ORDER BY results.sprint_id DESC
+      LIMIT 5;
+      ````
+      ![image](https://github.com/user-attachments/assets/98087f0d-e3b1-4d5f-a341-ea94ec7f9599)
+
 ***
 </details>
 <details>
