@@ -179,14 +179,51 @@ Regarding only the last 5 sprints, the team achieved its best performance in **s
   <summary>3. <b>Efficiency:</b>How efficiently is the team utilizing its available hours?</summary>
 <br>
 
-- First of all, I will calculate which have been the best and the worst sprints in terms of efficiency by dividing total story points by team hours: 
-  
+- First of all, I will calculate which sprints were the most and least efficient by dividing the total story points by the team hours. I'll also find the average efficiency. 
+
+_MIN EFFICIENCY:_
+
 ````sql
-
+SELECT results.sprint_id AS sprint, ROUND((planned_sp_done + unplanned_sp_done) / (team_hours),3) AS Min_Efficiency
+FROM results
+JOIN planned ON results.sprint_id = planned.sprint_id
+GROUP BY sprint
+ORDER BY Min_Efficiency ASC
+LIMIT 1;
 ````
-**Max efficiency:** (story points per hour) is 0.296.
+![image](https://github.com/user-attachments/assets/0efb3a71-5061-42db-8cab-f304a06be630)
 
-**Min efficiency:** (story points per hour) is 0.296.
+
+**Min efficiency:** At sprint 62, having 0.1403 story points per hour.
+
+_MAX EFFICIENCY:_
+
+````sql
+SELECT results.sprint_id AS sprint, ROUND((planned_sp_done + unplanned_sp_done) / (team_hours),3) AS Max_Efficiency
+FROM results
+JOIN planned ON results.sprint_id = planned.sprint_id
+GROUP BY sprint
+ORDER BY Max_Efficiency DESC
+LIMIT 1;
+````
+![image](https://github.com/user-attachments/assets/c0b1c064-7fee-4cbe-aa9b-aae8a45946f1)
+
+
+**Max efficiency:** At sprint 58, having 0.296 story points per hour.
+
+_AVG EFFICIENCY:_
+
+````sql
+SELECT results.sprint_id AS sprint, (planned_sp_done + unplanned_sp_done) / (team_hours) AS Max_Efficiency
+FROM results
+JOIN planned ON results.sprint_id = planned.sprint_id
+GROUP BY sprint
+ORDER BY Max_Efficiency DESC
+LIMIT 1;
+````
+
+**Avg efficiency:** At sprint 58, having 0.2958 story points per hour.
+
 
 - Now I will calculate average sprint efficiency by dividing total story points by team hours:
   
