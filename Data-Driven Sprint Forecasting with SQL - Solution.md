@@ -247,24 +247,24 @@ VALUES
 
    - To assess the team's performance, let's analyze their efficiency during the **past five sprints**: 
       
-    ````sql
-    SELECT results.sprint_id AS Sprint,
-      ROUND(SUM(planned_sp_done + unplanned_sp_done) / SUM(team_hours),3) AS Efficiency,
-      ROUND(SUM(planned_sp_done + unplanned_sp_done) / SUM(team_hours),3) - (
-        SELECT ROUND(AVG(Efficiency),3)
-        FROM (
-          SELECT (AVG(planned_sp_done + unplanned_sp_done) / AVG(team_hours)) AS Efficiency
-          FROM results
-          JOIN planned ON results.sprint_id = planned.sprint_id
-          GROUP BY results.sprint_id
-        ) AS Sprint_Avg_Subquery) AS Std_Deviation
-    FROM results
-    JOIN planned ON results.sprint_id = planned.sprint_id
-    GROUP BY results.sprint_id
-    ORDER BY results.sprint_id DESC
-    LIMIT 5;
-    ````
-    ![image](https://github.com/user-attachments/assets/5e7a880f-f8e5-45df-920c-5a38ca67d39d)
+      ````sql
+      SELECT results.sprint_id AS Sprint,
+        ROUND(SUM(planned_sp_done + unplanned_sp_done) / SUM(team_hours),3) AS Efficiency,
+        ROUND(SUM(planned_sp_done + unplanned_sp_done) / SUM(team_hours),3) - (
+          SELECT ROUND(AVG(Efficiency),3)
+          FROM (
+            SELECT (AVG(planned_sp_done + unplanned_sp_done) / AVG(team_hours)) AS Efficiency
+            FROM results
+            JOIN planned ON results.sprint_id = planned.sprint_id
+            GROUP BY results.sprint_id
+          ) AS Sprint_Avg_Subquery) AS Std_Deviation
+      FROM results
+      JOIN planned ON results.sprint_id = planned.sprint_id
+      GROUP BY results.sprint_id
+      ORDER BY results.sprint_id DESC
+      LIMIT 5;
+      ````
+      ![image](https://github.com/user-attachments/assets/5e7a880f-f8e5-45df-920c-5a38ca67d39d)
 
 
     Over the last 5 sprints, we've observed a **negative deviation**, indicating that **their performance is below the overall average**. Now as Scrum Master our duty will be to try to find out the reasons in order to improve the team's performance.
