@@ -181,7 +181,7 @@ VALUES
 
 - First of all, I will calculate which sprints were the most and least efficient by dividing the total story points by the team hours. I'll also find the average efficiency.
   
-   - _Min Effinciency_
+   - **Min Effinciency**
       ````sql
       SELECT results.sprint_id AS sprint, ROUND((planned_sp_done + unplanned_sp_done) / (team_hours),3) AS Min_Efficiency
       FROM results
@@ -192,9 +192,9 @@ VALUES
       ````
       ![image](https://github.com/user-attachments/assets/0efb3a71-5061-42db-8cab-f304a06be630)
 
-       Min efficiency: At sprint 62, having 0.1403 story points per hour.
+       _Min efficiency_: At sprint 62, having 0.1403 story points per hour.
    
-   - _Max Efficiency_
+   - **Max Efficiency**
  
       ````sql
       SELECT results.sprint_id AS sprint, ROUND((planned_sp_done + unplanned_sp_done) / (team_hours),3) AS Max_Efficiency
@@ -206,35 +206,18 @@ VALUES
       ````
       ![image](https://github.com/user-attachments/assets/c0b1c064-7fee-4cbe-aa9b-aae8a45946f1)
       
-      Max efficiency: At sprint 58, having 0.296 story points per hour.
-   
-   
-   - _Avg Efficiency_ 
+      _Max efficiency_: At sprint 58, having 0.296 story points per hour.
+     
+   - **Avg Efficiency** 
 
-
-
-_MAX EFFICIENCY:_
-````sql
-SELECT results.sprint_id AS sprint, ROUND((planned_sp_done + unplanned_sp_done) / (team_hours),3) AS Max_Efficiency
-FROM results
-JOIN planned ON results.sprint_id = planned.sprint_id
-GROUP BY sprint
-ORDER BY Max_Efficiency DESC
-LIMIT 1;
-````
-![image](https://github.com/user-attachments/assets/c0b1c064-7fee-4cbe-aa9b-aae8a45946f1)
-
-**Max efficiency:** At sprint 58, having 0.296 story points per hour.
-
-_AVG EFFICIENCY:_
-````sql
-SELECT ROUND(AVG(planned_sp_done + unplanned_sp_done) / AVG(team_hours), 3) AS Avg_Efficiency
-FROM results
-JOIN planned ON results.sprint_id = planned.sprint_id;
-````
-![image](https://github.com/user-attachments/assets/617d39a5-b08d-4a5a-ac98-2a4e2f4a7973)
-
-**Avg efficiency:** On average, the team does 0.199 story points per hour.
+      ````sql
+      SELECT ROUND(AVG(planned_sp_done + unplanned_sp_done) / AVG(team_hours), 3) AS Avg_Efficiency
+      FROM results
+      JOIN planned ON results.sprint_id = planned.sprint_id;
+      ````
+      ![image](https://github.com/user-attachments/assets/617d39a5-b08d-4a5a-ac98-2a4e2f4a7973)
+      
+      _Avg efficiency_: On average, the team does 0.199 story points per hour.
 
 - Now I will calculate average sprint efficiency by dividing total story points by team hours:
   
