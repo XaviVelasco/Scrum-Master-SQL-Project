@@ -116,10 +116,8 @@ VALUES
 - Taking in account all the springs:
 
 ````sql
-SELECT 
-    COUNT(sprint_id) AS "Total Sprints", ROUND(AVG(planned_sp_done + unplanned_sp_done)) AS "Average SP Done"
-FROM
-    results;
+SELECT COUNT(sprint_id) AS Sprints, ROUND(AVG(planned_sp_done + unplanned_sp_done)) AS Avg_SP_Done
+FROM results;
 ````
 
 ![image](https://github.com/user-attachments/assets/303c9d2b-484c-4c35-9c74-3e48362b8a1d)
@@ -129,15 +127,12 @@ There are 26 sprints in total, and **the overall average story points done are 8
 - Considering only the last 5 sprints:
 
 ````sql
-SELECT 
-    ROUND(AVG(planned_sp_done + unplanned_sp_done)) AS 'Average SP Done'
-FROM
-    results
-WHERE
-    sprint_id >= (SELECT 
-            MAX(sprint_id) - 4
-        FROM
-            results);
+SELECT ROUND(AVG(planned_sp_done + unplanned_sp_done)) AS Avg_SP_Done
+FROM results
+WHERE sprint_id >= (
+    SELECT MAX(sprint_id) - 4
+    FROM results
+    );
 ````
 ![image](https://github.com/user-attachments/assets/a51946b2-4048-42e8-ac98-9e662940f6da)
 
@@ -153,11 +148,8 @@ In this case, **the average story points done are 64**.
 - Taking in account all the springs:
   
 ````sql
-SELECT 
-    sprint_id AS Sprint,
-    (planned_sp_done + unplanned_sp_done) AS Total_SP
-FROM
-    results
+SELECT sprint_id AS Sprint, (planned_sp_done + unplanned_sp_done) AS Total_SP
+FROM results
 ORDER BY Total_SP DESC
 LIMIT 1;
 ````
@@ -168,16 +160,12 @@ The team achieved its best overall performance in **sprint 61 with 137 story poi
 - Considering only the last 5 sprints:
   
 ````sql
-SELECT 
-    sprint_id AS Sprint,
-    (planned_sp_done + unplanned_sp_done) AS Total_SP
-FROM
-    results
-WHERE
-    sprint_id >= (SELECT 
-            MAX(sprint_id) - 4
-        FROM
-            results)
+SELECT sprint_id AS Sprint,  (planned_sp_done + unplanned_sp_done) AS Total_SP
+FROM results
+WHERE sprint_id >= (
+  SELECT MAX(sprint_id) - 4
+  FROM results
+  )
 ORDER BY Total_SP DESC
 LIMIT 1;
 ````
@@ -191,20 +179,20 @@ Regarding only the last 5 sprints, the team achieved its best performance in **s
 <details>
   <summary>3. <b>Efficiency:</b>How efficiently is the team utilizing its available hours?</summary>
 <br>
-- First of all, I will calculate average sprint efficiency by dividing total story points by team hours:
 
+- First of all, I will calculate average sprint efficiency by dividing total story points by team hours:
+  
 ````sql
-SELECT 
-    ROUND(SUM(planned_sp_done + unplanned_sp_done) / SUM(team_hours), 3) AS Avg_Efficiency
-FROM
-    results
+SELECT ROUND(SUM(planned_sp_done + unplanned_sp_done) / SUM(team_hours), 3) AS Avg_Efficiency
+FROM results
 JOIN planned ON results.sprint_id = planned.sprint_id
 GROUP BY Avg_Efficiency;
 ````
 ![image](https://github.com/user-attachments/assets/5446861a-f5b2-452c-8ab4-5b6d6cccf26d)
 
-**Average efficiency (story points per hour) is 0.296**.
-  
+**Average efficiency** (story points per hour) is 0.296.
+
+***
 </details>
 <details>
   <summary>4. <b>Planned vs. Unplanned Work:</b> What is the ratio of planned story points completed to unplanned story points completed?</summary>
