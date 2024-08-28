@@ -115,27 +115,27 @@ VALUES
 
 - Taking in account all the springs:
 
-````sql
-SELECT COUNT(sprint_id) AS Sprints, ROUND(AVG(planned_sp_done + unplanned_sp_done)) AS Avg_SP_Done
-FROM results;
-````
-![image](https://github.com/user-attachments/assets/91a2acc2-8327-4a7f-990b-3be3a28e5c46)
-
-There are 26 sprints in total, and **the overall average story points done are 87**. 
+  ````sql
+  SELECT COUNT(sprint_id) AS Sprints, ROUND(AVG(planned_sp_done + unplanned_sp_done)) AS Avg_SP_Done
+  FROM results;
+  ````
+  ![image](https://github.com/user-attachments/assets/91a2acc2-8327-4a7f-990b-3be3a28e5c46)
+  
+  There are 26 sprints in total, and **the overall average story points done are 87**. 
 
 - Considering only the last 5 sprints:
 
-````sql
-SELECT ROUND(AVG(planned_sp_done + unplanned_sp_done)) AS Avg_SP_Done
-FROM results
-WHERE sprint_id >= (
-    SELECT MAX(sprint_id) - 4
-    FROM results
-    );
-````
-![image](https://github.com/user-attachments/assets/713df9e7-f33e-4900-8575-92a781a7dda3)
-
-In this case, **the average story points done are 64**.
+  ````sql
+  SELECT ROUND(AVG(planned_sp_done + unplanned_sp_done)) AS Avg_SP_Done
+  FROM results
+  WHERE sprint_id >= (
+      SELECT MAX(sprint_id) - 4
+      FROM results
+      );
+  ````
+  ![image](https://github.com/user-attachments/assets/713df9e7-f33e-4900-8575-92a781a7dda3)
+  
+  In this case, **the average story points done are 64**.
 
 ***
 
@@ -146,31 +146,31 @@ In this case, **the average story points done are 64**.
   
 - Taking in account all the springs:
   
-````sql
-SELECT sprint_id AS Sprint, (planned_sp_done + unplanned_sp_done) AS Total_SP
-FROM results
-ORDER BY Total_SP DESC
-LIMIT 1;
-````
-![image](https://github.com/user-attachments/assets/425fe96b-e07c-48de-a49e-e214994a2616)
-
-The team achieved its best overall performance in **sprint 61 with 137 story points**.
+  ````sql
+  SELECT sprint_id AS Sprint, (planned_sp_done + unplanned_sp_done) AS Total_SP
+  FROM results
+  ORDER BY Total_SP DESC
+  LIMIT 1;
+  ````
+  ![image](https://github.com/user-attachments/assets/425fe96b-e07c-48de-a49e-e214994a2616)
+  
+  The team achieved its best overall performance in **sprint 61 with 137 story points**.
 
 - Considering only the last 5 sprints:
   
-````sql
-SELECT sprint_id AS Sprint,  (planned_sp_done + unplanned_sp_done) AS Total_SP
-FROM results
-WHERE sprint_id >= (
-  SELECT MAX(sprint_id) - 4
+  ````sql
+  SELECT sprint_id AS Sprint,  (planned_sp_done + unplanned_sp_done) AS Total_SP
   FROM results
-  )
-ORDER BY Total_SP DESC
-LIMIT 1;
-````
-![image](https://github.com/user-attachments/assets/043528a0-b16a-4d97-900a-4754bb904f95)
-
-Regarding only the last 5 sprints, the team achieved its best performance in **sprint 63 with 72 story points**.
+  WHERE sprint_id >= (
+    SELECT MAX(sprint_id) - 4
+    FROM results
+    )
+  ORDER BY Total_SP DESC
+  LIMIT 1;
+  ````
+  ![image](https://github.com/user-attachments/assets/043528a0-b16a-4d97-900a-4754bb904f95)
+  
+  Regarding only the last 5 sprints, the team achieved its best performance in **sprint 63 with 72 story points**.
 
 ***
 </details>
