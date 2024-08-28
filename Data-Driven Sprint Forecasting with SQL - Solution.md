@@ -219,18 +219,30 @@ VALUES
       
       _Avg efficiency_: On average, the team does 0.199 story points per hour.
 
-- Now I will calculate average sprint efficiency by dividing total story points by team hours:
+- I will calculate the efficiency variation across **all sprints** using a subquery to determine the **standard deviation**.
   
-````sql
-SELECT ROUND(SUM(planned_sp_done + unplanned_sp_done) / SUM(team_hours), 3) AS Avg_Efficiency
-FROM results
-JOIN planned ON results.sprint_id = planned.sprint_id
-GROUP BY Avg_Efficiency;
-````
-![image](https://github.com/user-attachments/assets/5446861a-f5b2-452c-8ab4-5b6d6cccf26d)
+  ````sql
+  SELECT results.sprint_id AS Sprint,
+    ROUND(SUM(planned_sp_done + unplanned_sp_done) / SUM(team_hours),3) AS Efficiency,
+    ROUND((SUM(planned_sp_done + unplanned_sp_done) / SUM(team_hours)) - (
+      SELECT AVG(Efficiency)
+      FROM (
+        SELECT (SUM(planned_sp_done) / SUM(team_hours)) AS Efficiency
+        FROM results
+        JOIN planned ON results.sprint_id = planned.sprint_id
+        GROUP BY results.sprint_id
+      ) AS Sprint_Avg_Subquery),2) AS Std_Deviation
+  FROM results
+  JOIN planned ON results.sprint_id = planned.sprint_id
+  GROUP BY results.sprint_id
+  ORDER BY results.sprint_id ASC;
+  ````
+  ![image](https://github.com/user-attachments/assets/8d6304b2-44bd-4842-b9ed-585ee4917130)
 
-**Average efficiency** 0.296.
-
+- Now I will calculate the efficiency variation across the **last five sprints**.
+  
+  ````sql
+  ```` 
 ***
 </details>
 <details>
