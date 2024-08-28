@@ -187,11 +187,24 @@ Regarding only the last 5 sprints, the team achieved its best performance in **s
 
 ***
 </details>
+### Aqui
 <details>
   <summary>3. <b>Efficiency:</b>How efficiently is the team utilizing its available hours?</summary>
 <br>
-To ask this question, we are going to 
+We will measure efficiency by having how many story points per hour the team does in a sprint. 
 
+- First of all, we will check the average efficiency (total SP / team hours) for all the sprints:
+
+````sql
+SELECT 
+    ROUND(SUM(planned_sp_done + unplanned_sp_done) / SUM(team_hours), 3) AS Avg_Efficiency
+FROM
+    results
+JOIN planned ON results.sprint_id = planned.sprint_id
+GROUP BY Avg_Efficiency;
+````
+
+  
 </details>
 <details>
   <summary>4. <b>Planned vs. Unplanned Work:</b> What is the ratio of planned story points completed to unplanned story points completed?</summary>
