@@ -119,8 +119,7 @@ VALUES
 SELECT COUNT(sprint_id) AS Sprints, ROUND(AVG(planned_sp_done + unplanned_sp_done)) AS Avg_SP_Done
 FROM results;
 ````
-
-![image](https://github.com/user-attachments/assets/303c9d2b-484c-4c35-9c74-3e48362b8a1d)
+![image](https://github.com/user-attachments/assets/91a2acc2-8327-4a7f-990b-3be3a28e5c46)
 
 There are 26 sprints in total, and **the overall average story points done are 87**. 
 
@@ -134,7 +133,7 @@ WHERE sprint_id >= (
     FROM results
     );
 ````
-![image](https://github.com/user-attachments/assets/a51946b2-4048-42e8-ac98-9e662940f6da)
+![image](https://github.com/user-attachments/assets/713df9e7-f33e-4900-8575-92a781a7dda3)
 
 In this case, **the average story points done are 64**.
 
