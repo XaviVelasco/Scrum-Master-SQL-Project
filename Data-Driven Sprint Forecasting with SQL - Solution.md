@@ -270,11 +270,45 @@ VALUES
     Over the last 5 sprints, we've observed a **negative deviation**, indicating that **their performance is below the overall average**. Now as Scrum Master our duty will be to try to find out the reasons in order to improve the team's performance.
 ***
 </details>
-<details>
-  <summary>4. <b>Planned vs. Unplanned Work:</b> What is the ratio of planned story points completed to unplanned story points completed?</summary>
-<br>
-To ask this question, we are going to 
 
+
+
+### Next
+
+
+<details>
+  <summary>4. <b>Planned vs. Unplanned Work:</b> What is the ratio of planned work completed to unplanned work completed?</summary>
+<br>
+
+   - **Issues comparison**
+     - For all the sprints:
+     
+     ````sql
+     SELECT ROUND((sum(planned_issues_done) / sum(planned_issues_done + unplanned_issues_done)) * 100, 2)
+             AS '% issues planned', 
+          	ROUND((sum(unplanned_issues_done) / sum(planned_issues_done + unplanned_issues_done)) * 100, 2)
+             AS '% issues unplanned'
+     FROM results;
+     ````
+     ![image](https://github.com/user-attachments/assets/ed764f74-3a35-407a-a882-92a33ce00c16)
+
+     **Unplanned** issues are a 26,04% of the total amount of work done. 
+
+     - For the last 5 sprints:
+     
+     ````sql
+     SELECT ROUND((sum(planned_issues_done) / sum(planned_issues_done + unplanned_issues_done)) * 100, 2)
+             AS '% issues planned', 
+          	ROUND((sum(unplanned_issues_done) / sum(planned_issues_done + unplanned_issues_done)) * 100, 2)
+             AS '% issues unplanned'
+     FROM results
+     WHERE sprint_id >= (
+           SELECT MAX(sprint_id) - 4
+           FROM results
+           );
+     ````
+
+ 
 </details>
 <details>
   <summary>5. <b>Task Completion:</b> What is the average completion rate of planned tasks?</summary>
