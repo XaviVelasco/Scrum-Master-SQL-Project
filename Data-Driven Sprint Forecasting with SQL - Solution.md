@@ -292,7 +292,7 @@ VALUES
      ````
      ![image](https://github.com/user-attachments/assets/ed764f74-3a35-407a-a882-92a33ce00c16)
 
-     **Unplanned** issues are a 26,04% of the total amount of work done. 
+     **Unplanned** issues represent 26.04% of the total work performed. 
 
      - For the last 5 sprints:
      
@@ -307,6 +307,9 @@ VALUES
            FROM results
            );
      ````
+     ![image](https://github.com/user-attachments/assets/fe913f72-df27-4c34-b67c-01820ab2b15d)
+
+     **Unplanned** issues comprised 25.45% of the total work during the last five sprints, which is lower than the average unplanned rate across all sprints.
 
  
 </details>
