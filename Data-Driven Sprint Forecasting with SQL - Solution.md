@@ -281,8 +281,10 @@ VALUES
 <br>
 
    - **Issues comparison**
-     - For all the sprints:
      
+     - For all the sprints:
+
+
      ````sql
      SELECT ROUND((sum(planned_issues_done) / sum(planned_issues_done + unplanned_issues_done)) * 100, 2)
              AS '% issues planned', 
@@ -295,7 +297,8 @@ VALUES
      **Unplanned** issues represent 26.04% of the total work performed. 
 
      - For the last 5 sprints:
-     
+
+
      ````sql
      SELECT ROUND((sum(planned_issues_done) / sum(planned_issues_done + unplanned_issues_done)) * 100, 2)
              AS '% issues planned', 
@@ -310,6 +313,9 @@ VALUES
      ![image](https://github.com/user-attachments/assets/fe913f72-df27-4c34-b67c-01820ab2b15d)
 
      **Unplanned** issues comprised 25.45% of the total work during the last five sprints, which is lower than the average unplanned rate across all sprints.
+
+   - **Story points comparison**
+     
 
  
 </details>
