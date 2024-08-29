@@ -346,17 +346,76 @@ VALUES
 
 </details>
 
+<details>
+  <summary>5. <b>Task Completion:</b> What is the average completion rate of planned tasks?</summary>
+<br>
+
+  - I will calculate the average percentage of _planned issues done_ out of _planned issues_ for evey sprint to evaluate the team's consistency in completing planned work.
+      
+    ````sql
+    SELECT results.sprint_id AS Sprint, planned_sp AS 'SP Planned', planned_sp_done AS 'SP Done', 
+          ROUND(SUM(planned_sp_done) / SUM(planned_sp) * 100, 2) AS '% Done'
+    FROM results
+    JOIN planned ON results.sprint_id = planned.sprint_id
+    GROUP BY Sprint;
+    ````
+    ![image](https://github.com/user-attachments/assets/bddf596e-e238-4355-9e4e-067d6f71ab1a)
+
+  - Now I will calculate average percentage for all the sprints:
+    ````sql
+    SELECT ROUND((SUM(planned_sp_done) / SUM(planned_sp)) * 100 ,2) AS Avg_ratio
+    FROM results
+    JOIN planned ON results.sprint_id = planned.sprint_id;
+    ````
+    ![image](https://github.com/user-attachments/assets/671a185c-5191-401f-b3ef-4c1af39119b5)
+
+    **Average completion rate for all the sprints is 73.00%.**
+
+  - Now I will calculate average percentage for the last five sprints:
+
+    ````sql
+    SELECT ROUND((SUM(planned_sp_done) / SUM(planned_sp)) * 100 ,2) AS Avg_ratio
+    FROM results
+    JOIN planned ON results.sprint_id = planned.sprint_id
+    WHERE results.sprint_id >= (
+    		SELECT MAX(sprint_id) - 4
+    		FROM results);
+    ````
+    ![image](https://github.com/user-attachments/assets/7c5d50b6-2eeb-4168-b6b6-e302d3ec7a69)
+
+    **Average completion rate over the last five sprints is 83.23%.**
+
+  - Then, I will calculate the average percentage for each of the last five sprints to observe whether the team's consistency trend increases or not from the average across all the sprints:
+    ````sql
+    
+     SELECT results.sprint_id AS sprint, ROUND((SUM(planned_sp_done) / SUM(planned_sp)) * 100 ,2) AS total_done,
+        ROUND((SUM(planned_sp_done) / SUM(planned_sp)) * 100 ,2) - (
+          SELECT ROUND((SUM(planned_sp_done) / SUM(planned_sp)) * 100 ,2) AS total_done
+          FROM results
+          JOIN planned ON results.sprint_id = planned.sprint_id
+          ) AS Deviation
+     FROM results
+     JOIN planned ON results.sprint_id = planned.sprint_id
+     	WHERE results.sprint_id >= (
+     		SELECT MAX(sprint_id) - 4
+     		FROM results)
+     GROUP BY sprint;
+     ````
+     ![image](https://github.com/user-attachments/assets/fa1f60c4-8b0a-431f-8b7c-7c15c7c926a2)
+
+  - **Conclusion:**
+    
+     During the last few sprints, especially the last four, **there is a clear tendency to meet the initially planned story points**. For this reason, we can say that **the team is achieving greater compliance** with the commitment initially made in the sprint planning.
+
+<br>
+</details>
+
 
 
 ### Next
 
 
-<details>
-  <summary>5. <b>Task Completion:</b> What is the average completion rate of planned tasks?</summary>
-<br>
-To ask this question, we are going to 
-<br>
-</details>
+
 <details>
   <summary>6. <b>Unplanned Work:</b> What percentage of the total sprint workload is taken up by unplanned work?</summary>
 <br>
