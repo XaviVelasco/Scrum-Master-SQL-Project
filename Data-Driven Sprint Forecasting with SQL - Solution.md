@@ -271,11 +271,6 @@ VALUES
 ***
 </details>
 
-
-
-### Next
-
-
 <details>
   <summary>4. <b>Planned vs. Unplanned Work:</b> What is the ratio of planned work completed to unplanned work completed?</summary>
 <br>
@@ -311,7 +306,7 @@ VALUES
      ````
      ![image](https://github.com/user-attachments/assets/fe913f72-df27-4c34-b67c-01820ab2b15d)
 
-     **Unplanned issues** comprised 25.45% of the total work during the last five sprints, which is lower than the average unplanned rate across all sprints.
+     **Unplanned issues** comprised 25.45% of the total work during the last five sprints, which is just a bit lower than the average unplanned rate across all sprints.
 
    - **Story points comparison**
      
@@ -345,8 +340,17 @@ VALUES
 
         **Unplanned SP** accounted for 13.13% of the total work effort during the past five sprints. This rate is lower than the average unplanned percentage across all sprints, indicating a positive trend towards reduced unplanned work.
 
+   - **Conclusion**
+
+     Although if we look at the issues of the last five sprints it might seem that unplanned work has hardly been reduced, if we look at the story points we do observe a notable trend towards the reduction of this unplanned work.
 
 </details>
+
+
+
+### Next
+
+
 <details>
   <summary>5. <b>Task Completion:</b> What is the average completion rate of planned tasks?</summary>
 <br>
