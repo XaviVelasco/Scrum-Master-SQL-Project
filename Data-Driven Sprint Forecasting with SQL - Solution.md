@@ -284,7 +284,6 @@ VALUES
      
      - For all the sprints:
 
-
      ````sql
      SELECT ROUND((sum(planned_issues_done) / sum(planned_issues_done + unplanned_issues_done)) * 100, 2)
              AS '% issues planned', 
@@ -294,7 +293,7 @@ VALUES
      ````
      ![image](https://github.com/user-attachments/assets/ed764f74-3a35-407a-a882-92a33ce00c16)
 
-     **Unplanned** issues represent 26.04% of the total work performed. 
+     **Unplanned issues** represent 26.04% of the total work performed. 
 
      - For the last 5 sprints:
 
@@ -312,12 +311,41 @@ VALUES
      ````
      ![image](https://github.com/user-attachments/assets/fe913f72-df27-4c34-b67c-01820ab2b15d)
 
-     **Unplanned** issues comprised 25.45% of the total work during the last five sprints, which is lower than the average unplanned rate across all sprints.
+     **Unplanned issues** comprised 25.45% of the total work during the last five sprints, which is lower than the average unplanned rate across all sprints.
 
    - **Story points comparison**
      
+      - For all the sprints:
 
- 
+        ````sql
+        SELECT ROUND((sum(planned_sp_done) / sum(planned_sp_done + unplanned_sp_done)) * 100, 2)
+                  AS '% SP planned',
+               ROUND((sum(unplanned_sp_done) / sum(planned_sp_done + unplanned_sp_done)) * 100, 2)
+                  AS '% SP unplanned'
+        FROM results;
+        ````
+        ![image](https://github.com/user-attachments/assets/c9d2797e-93e5-420e-ab09-df3646bab171)
+  
+        **Unplanned SP** represent 20.37% of the total work performed. 
+
+
+      - For the last 5 sprints:
+
+        ````sql
+        SELECT ROUND((sum(planned_sp_done) / sum(planned_sp_done + unplanned_sp_done)) * 100, 2)
+                AS '% SP planned', 
+               ROUND((sum(unplanned_sp_done) / sum(planned_sp_done + unplanned_sp_done)) * 100, 2)
+                AS '% SP unplanned'
+        FROM results
+        WHERE sprint_id >= (
+              SELECT MAX(sprint_id) - 4
+              FROM results);
+        ````
+        ![image](https://github.com/user-attachments/assets/97dee76d-bffb-4650-9bba-c90637f35c98)
+
+        **Unplanned SP** accounted for 13.13% of the total work effort during the past five sprints. This rate is lower than the average unplanned percentage across all sprints, indicating a positive trend towards reduced unplanned work.
+
+
 </details>
 <details>
   <summary>5. <b>Task Completion:</b> What is the average completion rate of planned tasks?</summary>
