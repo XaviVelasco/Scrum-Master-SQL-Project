@@ -350,6 +350,8 @@ VALUES
   <summary>5. <b>Task Completion:</b> What is the average completion rate of planned tasks?</summary>
 <br>
 
+When the team plans the sprint, they commit to specific issues or story points. Here, I will measure how many of the committed issues or SP were actually completed.
+
   - I will calculate the average percentage of _planned issues done_ out of _planned issues_ for evey sprint to evaluate the team's consistency in completing planned work.
       
     ````sql
@@ -411,38 +413,25 @@ VALUES
 </details>
 
 
-
 ### Next
 
-
-
 <details>
-  <summary>6. <b>Unplanned Work:</b> What percentage of the total sprint workload is taken up by unplanned work?</summary>
+  <summary>6. <b>Commitment vs. Delivery:</b> What is the percentage of story points committed that were successfully completed during the sprint? </summary>
 <br>
-To ask this question, we are going to 
+  
+Unlike the previous question, we are going to calculate the **capacity compliance** that the team plans at the beginning of each sprint. That is, whether or not it has delivered the number of story points that it has committed to or planned during the sprint planning event. 
+
 <br>
 </details>
 <details>
-  <summary>7. <b>Unplanned Issues:</b> What is the average number of unplanned issues introduced per sprint?</summary>
+  <summary>7. <b>Defects:</b> What percentage of the total sprint workload is taken up by bugs?</summary>
 <br>
-To ask this question, we are going to 
+To answer this question, we are going to 
 <br>
 </details>
 <details>
   <summary>8. <b>Story Refinement:</b> Is the team improving stories refinement?</summary>
 <br>
-To ask this question, we are going to 
-<br>
-</details>
-<details>
-  <summary>9. <b>Defects:</b> What percentage of the total sprint workload is taken up by bugs?</summary>
-<br>
-To ask this question, we are going to 
-<br>
-</details>
-<details>
-  <summary>10. <b>Commitment vs. Delivery:</b> What is the percentage of story points committed that were successfully completed during the sprint?</summary>
-<br>
-To ask this question, we are going to 
+To answer this question, we are going to 
 <br>
 </details>
