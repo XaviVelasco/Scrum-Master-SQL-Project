@@ -413,7 +413,7 @@ When the team plans the sprint, they commit to specific issues or story points. 
 </details>
 
 
-### Next
+### To do
 
 <details>
   <summary>6. <b>Commitment vs. Delivery:</b> What is the percentage of story points committed that were successfully completed during the sprint? </summary>
