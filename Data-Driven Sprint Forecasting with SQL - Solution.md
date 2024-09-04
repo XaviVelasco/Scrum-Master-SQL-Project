@@ -448,16 +448,9 @@ JOIN planned
 ON results.sprint_id = planned.sprint_id
 GROUP BY Sprint;
 ````
-
 ![image](https://github.com/user-attachments/assets/aa3171cb-d81c-4535-b53d-c8bcb5207d0b)
-
-
 <br>
 </details>
-
-
-### To do
-
 <details>
   <summary>8. <b>Story Refinement:</b> Is the team improving stories refinement?</summary>
 <br>
