@@ -434,16 +434,30 @@ Our **sprint data reveals fluctuations in story point delivery**. While some spr
 
 <br>
 </details>
+<details>
+  <summary>7. <b>Defects:</b> What percentage of the total sprint workload in story points is taken up by bugs?</summary>
+<br>
+I'm going to calculate what percentage of our work is spent fixing bugs and technical debt. I'll look at all the story points we've done, both planned and unplanned, and see how many of those were for fixing problems.
+
+
+````sql
+SELECT results.sprint_id AS Sprint, planned_sp_done + unplanned_sp_done AS 'Total SP', bugs_sp AS 'Bugs (SP)',
+  ROUND((bugs_sp / (planned_sp_done + unplanned_sp_done)) * 100,2) AS '%_Bugs' 
+FROM results
+JOIN planned
+ON results.sprint_id = planned.sprint_id
+GROUP BY Sprint;
+````
+
+![image](https://github.com/user-attachments/assets/aa3171cb-d81c-4535-b53d-c8bcb5207d0b)
+
+
+<br>
+</details>
 
 
 ### To do
 
-<details>
-  <summary>7. <b>Defects:</b> What percentage of the total sprint workload is taken up by bugs?</summary>
-<br>
-To answer this question, we are going to 
-<br>
-</details>
 <details>
   <summary>8. <b>Story Refinement:</b> Is the team improving stories refinement?</summary>
 <br>
