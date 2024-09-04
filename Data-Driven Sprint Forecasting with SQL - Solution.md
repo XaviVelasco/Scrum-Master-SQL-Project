@@ -412,17 +412,32 @@ When the team plans the sprint, they commit to specific issues or story points. 
 <br>
 </details>
 
-
-### To do
-
 <details>
   <summary>6. <b>Commitment vs. Delivery:</b> What is the percentage of story points committed that were successfully completed during the sprint? </summary>
 <br>
   
 Unlike the previous question, we are going to calculate the **capacity compliance** that the team plans at the beginning of each sprint. That is, whether or not it has delivered the number of story points that it has committed to or planned during the sprint planning event. 
 
+````sql
+
+SELECT results.sprint_id AS Sprint, planned_sp AS Commited, (planned_sp_done + unplanned_sp_done) AS Delivered, 
+    ROUND(((planned_sp_done + unplanned_sp_done) / planned_sp) * 100, 1) AS '% Compliance'
+FROM results
+JOIN planned 
+ON results.sprint_id = planned.sprint_id
+GROUP BY sprint;
+
+````        
+![image](https://github.com/user-attachments/assets/85ad48ab-5116-44bc-a294-3c0e88dd2375)
+
+Our **sprint data reveals fluctuations in story point delivery**. While some sprints have fallen short of committed points, others have exceeded calculated capacity. As a Scrum Master, I'll investigate these discrepancies to identify underlying causes and implement corrective measures. This could involve refining estimation techniques, adjusting workload expectations, or addressing external factors impacting productivity. By aligning delivery with commitments, we can enhance team efficiency and predictability.
+
 <br>
 </details>
+
+
+### To do
+
 <details>
   <summary>7. <b>Defects:</b> What percentage of the total sprint workload is taken up by bugs?</summary>
 <br>
