@@ -31,6 +31,7 @@ To achieve these objectives, I formulated data-driven questions to guide my anal
 7. **Defects**: _What percentage of the total sprint workload in story points is taken up by bugs?_
 8. **Story Refinement**: _Is the team improving user stories refinement?_
 
+You can find the analysis in the [Data-Driven Sprint Forecasting with SQL Solution].(https://github.com/XaviVelasco/Scrum-Master-SQL-Project/blob/04769769a29a4eb95e527dcd65f9030dc59112df/Data-Driven%20Sprint%20Forecasting%20with%20SQL%20-%20Solution.md)
 
 ## 📖 Methodology:
 
