@@ -28,8 +28,8 @@ To achieve these objectives, I formulated data-driven questions to guide my anal
 4. **Planned vs. Unplanned Work**: _What is the ratio of planned work completed to unplanned work completed?_ 
 5. **Task Completion**: _What is the average completion rate of planned tasks?_
 6. **Commitment vs. Delivery**: _What is the percentage of story points committed that were successfully completed during the sprint?_ 
-7. **Defects**: _What percentage of the total sprint workload is taken up by bugs?_
-8. **Story Refinement**: _Is the team improving stories refinement?_
+7. **Defects**: _What percentage of the total sprint workload in story points is taken up by bugs?_
+8. **Story Refinement**: _Is the team improving user stories refinement?_
 
 
 ## 📖 Methodology:
