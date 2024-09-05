@@ -452,7 +452,7 @@ GROUP BY Sprint;
 <br>
 </details>
 <details>
-  <summary>8. <b>Story Refinement:</b> Is the team improving stories refinement?</summary>
+  <summary>8. <b>Story Refinement:</b> Is the team improving user stories refinement?</summary>
 <br>
 I would like to know if the team is improving its issue refinement by being more accurate when estimating during the planning event. Our main objective is to reduce story point estimation per issue as much as possible. To track progress, I will calculate the average story points per issue in each sprint.
 
