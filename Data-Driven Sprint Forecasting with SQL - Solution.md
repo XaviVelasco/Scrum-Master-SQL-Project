@@ -454,6 +454,54 @@ GROUP BY Sprint;
 <details>
   <summary>8. <b>Story Refinement:</b> Is the team improving stories refinement?</summary>
 <br>
-To answer this question, we are going to 
+I would like to know if the team is improving its issue refinement by being more accurate when estimating during the planning event. Our main objective is to reduce story point estimation per issue as much as possible. To track progress, I will calculate the average story points per issue in each sprint.
+
+  - I will calculate the average percentage of _planned issues done_ out of _planned issues_ for evey sprint to evaluate the team's consistency in completing planned work.
+      
+    ````sql
+    SELECT results.sprint_id AS Sprint, planned_sp AS 'SP Planned', planned_sp_done AS 'SP Done', 
+          ROUND(SUM(planned_sp_done) / SUM(planned_sp) * 100, 2) AS '% Done'
+    FROM results
+    JOIN planned ON results.sprint_id = planned.sprint_id
+    GROUP BY Sprint;
+    ````
+    ![image](https://github.com/user-attachments/assets/bddf596e-e238-4355-9e4e-067d6f71ab1a)
+
+  - Now I will calculate average percentage for all the sprints:
+    ````sql
+    SELECT ROUND((SUM(planned_sp_done) / SUM(planned_sp)) * 100 ,2) AS Avg_ratio
+    FROM results
+    JOIN planned ON results.sprint_id = planned.sprint_id;
+    ````
+    ![image](https://github.com/user-attachments/assets/671a185c-5191-401f-b3ef-4c1af39119b5)
+
 <br>
+-- x sprint
+
+SELECT sprint_id AS Sprint, ROUND(AVG(planned_sp / planned_issues),2) AS Ratio
+FROM planned
+GROUP BY sprint;
+
+-- AVG total
+
+SELECT ROUND(AVG(planned_sp / planned_issues),2) AS 'All sprints'
+FROM planned;
+
+-- AVG last 5 sprints
+
+SELECT ROUND(AVG(planned_sp / planned_issues),2) AS 'Last 5 spr'
+FROM planned
+WHERE sprint_id >= (
+		SELECT MAX(sprint_id) - 4
+		FROM planned)
+        ;  
+
+-- AVG first 5 sprints
+
+SELECT ROUND(AVG(planned_sp / planned_issues),2) AS 'First 5 spr'
+FROM planned
+WHERE sprint_id >= (
+		SELECT MIN(sprint_id) + 4
+		FROM planned)
+        ;  
 </details>
