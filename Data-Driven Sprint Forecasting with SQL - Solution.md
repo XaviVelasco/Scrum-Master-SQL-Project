@@ -462,7 +462,9 @@ I would like to know if the team is improving its issue refinement by being more
     SELECT ROUND(AVG(planned_sp / planned_issues),2) AS 'All sprints'
     FROM planned;
     ````
-  
+    ![image](https://github.com/user-attachments/assets/155b638c-8d45-443a-996c-a371d2f26959)
+
+    On average, there have been **5.48** story points per planned issue in case we take in account all the sprints done.
 
   - Now I will calculate what is the ratio for each sprint:
     ````sql
@@ -470,6 +472,8 @@ I would like to know if the team is improving its issue refinement by being more
     FROM planned
     GROUP BY sprint;
     ````
+    ![image](https://github.com/user-attachments/assets/17ed2cdb-f558-4b13-98f6-0b2a8505d9c1)
+
 
   - Then I will calculate average ratio for the first 5 sprints...
     ````sql
@@ -479,6 +483,9 @@ I would like to know if the team is improving its issue refinement by being more
     	SELECT MIN(sprint_id) + 4
     	FROM planned);
     ````
+    ![image](https://github.com/user-attachments/assets/31b50e01-6384-4d26-b52c-386851e07017) <br>
+
+    On average, there have been **5.28** story points per planned issue during the first 5 sprints.
 
   - ... and now for the last 5 sprints in order to compare them:
     ````sql
@@ -488,6 +495,11 @@ I would like to know if the team is improving its issue refinement by being more
     	SELECT MAX(sprint_id) - 4
     	FROM planned);
     ````
-    
+    ![image](https://github.com/user-attachments/assets/9e9930f9-2129-4dfb-976d-5a3564134205)
+
+    On average, there have been **4.38** story points per planned issue during the last 5 sprints.
+
+  - **Conclusion:**<br>
+    Based on the analysis of story point estimation across the first five sprints compared to the last five sprints, **we can conclude that the team is demonstrating improved proficiency in user story refinement**. While initial estimates were higher, we've observed a trend toward more accurate estimations. This is evidenced by a decrease in average story points per planned issue from 5.48 to 4.38, suggesting a better refinement of each user story.
 <br>
 </details>
