@@ -1,10 +1,6 @@
 # :mag_right: Data-Driven Sprint Forecasting with SQL
 
-## 📚 Table of contents
-
-- [Overview](#overview)
-- [Key Objectives](#key-objectives)
-- [Methodology](#methodology)
+[Overview](#overview) · [Key Objectives](#key-objectives) · [Methodology](#methodology)
 
 ***
 
@@ -65,14 +61,6 @@ Each table column is described in detail below:
 | unplanned_sp_done | INT | Number of Story Points Done that were NOT planned |
 | bugs_sp | INT | SP of bugs done during this sprint (planned or unplanned) |
 
-You can check the SQL file [here](https://github.com/XaviVelasco/).
 
 > [!IMPORTANT]
 > This data used is based on real scrum teams but has been deliberately modified.
-
-## 📈 Expected Outcomes:
-
-- **Improved sprint planning**: More accurate forecasts and resource allocation based on historical data.
-- **Enhanced team performance**: Identification of areas for improvement and implementation of targeted strategies.
-- **Data-driven decision-making**: A framework for making informed decisions based on evidence.
-
