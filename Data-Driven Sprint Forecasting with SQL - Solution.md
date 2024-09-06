@@ -218,7 +218,7 @@ VALUES
       
       _Avg efficiency_: On average, the team does 0.199 story points per hour.
 
-- I will calculate the efficiency variation using a subquery to determine the **standard deviation**.
+- I will calculate the efficiency variation using a subquery to determine the **deviation**.
 
   **If the deviation is positive**, it indicates that the sprint's efficiency is higher than the average efficiency. This means the sprint performed better than the overall average in terms of delivering story points per team hour.
 
@@ -236,13 +236,14 @@ VALUES
             FROM results
             JOIN planned ON results.sprint_id = planned.sprint_id
             GROUP BY results.sprint_id
-          ) AS Sprint_Avg_Subquery) AS Std_Deviation
+          ) AS Sprint_Avg_Subquery) AS Deviation
       FROM results
       JOIN planned ON results.sprint_id = planned.sprint_id
       GROUP BY results.sprint_id
       ORDER BY results.sprint_id ASC;
       ````
-      ![image](https://github.com/user-attachments/assets/641ae03d-3dd8-41f2-847d-c990406f9f19)
+      ![image](https://github.com/user-attachments/assets/249ab80f-f49b-4ed0-92dc-74b5487eb19c)
+
 
 
    - To assess the team's performance, let's analyze their efficiency during the **past five sprints**: 
@@ -257,14 +258,14 @@ VALUES
             FROM results
             JOIN planned ON results.sprint_id = planned.sprint_id
             GROUP BY results.sprint_id
-          ) AS Sprint_Avg_Subquery) AS Std_Deviation
+          ) AS Sprint_Avg_Subquery) AS Deviation
       FROM results
       JOIN planned ON results.sprint_id = planned.sprint_id
       GROUP BY results.sprint_id
       ORDER BY results.sprint_id DESC
       LIMIT 5;
       ````
-      ![image](https://github.com/user-attachments/assets/5e7a880f-f8e5-45df-920c-5a38ca67d39d)
+      ![image](https://github.com/user-attachments/assets/3e689c28-b9bd-4044-94b2-1a3e56dff130)
 
 
     Over the last 5 sprints, we've observed a **negative deviation**, indicating that **their performance is below the overall average**. Now as Scrum Master our duty will be to try to find out the reasons in order to improve the team's performance.
